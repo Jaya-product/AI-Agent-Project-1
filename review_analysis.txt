@@ -1,0 +1,40 @@
+Total reviews: 400
+Date range: 2026-10-11 12:18:07 to 2026-10-14 14:56:00
+Avg rating: 4.48
+Rating dist: {1: 37, 2: 4, 3: 9, 4: 31, 5: 319}
+Short reviews (<20 chars): 269 (67.2%)
+Non-ASCII/multilingual: 77 (19.2%)
+
+--- TOP THUMBS-UP REVIEWS ---
+[5star | 504 thumbs] I love the way the updates are coming... Kudos groww Team, your hard work really shows.. this app is my one and only for
+[1star | 22 thumbs] bekar app. ghatiya app. shame on this kind of app. zero⭐ to this app. bilkul bekar app hai. don't trust this kind of app
+
+--- LOW RATING (1-2 star) SUBSTANTIVE REVIEWS ---
+[thumbs:22] bekar app. ghatiya app. shame on this kind of app. zero⭐ to this app. bilkul bekar app hai. don't trust this kind of app. option nhi hai main toh zero ⭐ hi doonga
+[thumbs:2] सबसे बड़ा चोर है ये अलविदा ग्रोव बहुत लूटा तूने अब तेरा अर्थी सज गई अब हम नई जगह प्रवेश कर रहें है STOXKART BEST FREE BROKERAGE SERVICES। बहुत बढ़िया है STOXKART
+[thumbs:1] the app is quite good and might be the best but the brokerage charges for small investors like Us is loot. They are charging 20 rs per order which means 40 rs. for just selling and buying a stock. And
+[thumbs:1] no web login without mobile otp , provide multiple options to complete 2FA . Lack of integrity in finance related app is major red flag. Slowly turning into white collar criminals leeching of unsuspec
+[thumbs:1] Extremely poor customer service! I requested a withdrawal on 8 October 2026, but my funds have still not been credited. Despite repeatedly contacting customer support and the Twitter team, there is no
+[thumbs:1] too much heavy charges above than 2% on purchase
+[thumbs:1] The only reason which looks bad is that this app is not transparent with investors. They should show the total expense ratio for each mutual fund including GST and Statutory charges. So one can compar
+[thumbs:1] don't download the app I switch to zerodha and happy with zerodha
+[thumbs:1] I don't have auto mandate for monthly sip 5000 for October 5th but debited from my bank account and not added to SIP amount or Groww balance. request raised but they simply saying resolved the issue t
+[thumbs:1] Pathetic customer service. A simple task takes weeks. I need to explain the same issue like a broken record again and again to different support executives. there are no proactive follow ups on one is
+[thumbs:1] waste and scam app groww full of scam👎🏻👎🏻👎🏻🤬🤬
+[thumbs:1] Brokarage fees are too high , Dp charge 24 rupees , I have। switched to another platform, when I calculate my monthly brokerage charge i am fully shocked and immediately change my reading platform
+[thumbs:1] App stopped working with old android OS since october 2026. kindly do something and make it work again!
+[thumbs:1] Very laaging can't able to trade easily interface is good but app is very slow
+[thumbs:1] Is there any plan to rollout USA trading for grow users.due to this moving to another platform for trading.
+[thumbs:0] The app is good, easy to use interface and quick turnaround time. However what is frustratingly disappointing is the customer service of this company. They are unhelpful, unprofessional and so patroni
+[thumbs:0] I need customer support I have ipo autopay issue this is not work to auto pay plz solve this problem
+[thumbs:0] App is trader friendly but brokerage charges are very high when compared to other platforms and also ununderstandable report ledgers , definitely you pay your 50 percent losses to groww only.
+[thumbs:0] can't able to sell my stocks it usually hangs up
+[thumbs:0] The app makes investing simple, but redeeming your money is a huge problem. I requested a withdrawal 3 weeks ago, and while the app status says "Transaction Successful," the funds were never credited 
+
+--- 3-STAR REVIEWS ---
+[thumbs:0] Index Alphabetically arrange issue ----Please arrange Index Shares Market Capital wise as before don't arrange in Alphabetically or either you give options for arrangement according to user choice.
+[thumbs:0] Fix your bug or lacking groww team. I am facing issues like I putting target to sell on 95 but it sell on 93. buddy its hits 95 so sell at 95 only. apart from this I love the app.
+[thumbs:1] thanks India market all
+[thumbs:0] Very nice app. but charges are very high. and there's is a problem order exicuted before candle reached the SL line. please fixed that problem.🙌
+[thumbs:1] After the recent update, the “Similar Funds in the Same Category” section has been removed. This feature was very useful when an existing fund was underperforming and I wanted to switch to a better-pe
+[thumbs:0] all are right, but now matter is I'm want to connect tradingview but there is no option right?!!!

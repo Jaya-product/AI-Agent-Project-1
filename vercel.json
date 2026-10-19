@@ -1,0 +1,40 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/api",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/",
+      "destination": "/Designs/groww-pulse/index.html"
+    },
+    {
+      "source": "/styles.css",
+      "destination": "/Designs/groww-pulse/styles.css"
+    },
+    {
+      "source": "/app.js",
+      "destination": "/Designs/groww-pulse/app.js"
+    },
+    {
+      "source": "/data/(.*)",
+      "destination": "/Designs/groww-pulse/data/$1"
+    },
+    {
+      "source": "/screenshots/(.*)",
+      "destination": "/Designs/groww-pulse/screenshots/$1"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/cron",
+      "schedule": "0 9 * * 1"
+    }
+  ]
+}

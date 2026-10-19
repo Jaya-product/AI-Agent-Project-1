@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Groww Review Intelligence Agent — Python Dependencies
+# Install with: pip install -r requirements.txt
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── LLM Client (choose one — both listed for flexibility) ────────────────────
+google-generativeai>=0.7.0    # Gemini
+openai>=1.30.0                # OpenAI / GPT-4o
+
+# ── Play Store Review Fetching ────────────────────────────────────────────────
+google-play-scraper>=1.2.7
+
+# ── MCP (Model Context Protocol) SDK ─────────────────────────────────────────
+mcp>=1.0.0
+
+# ── Schema Validation ─────────────────────────────────────────────────────────
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+
+# ── Configuration & Secrets ───────────────────────────────────────────────────
+python-dotenv>=1.0.1
+PyYAML>=6.0.1
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+pytest>=8.2.0
+pytest-mock>=3.14.0
+pytest-cov>=5.0.0

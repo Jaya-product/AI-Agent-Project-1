@@ -1,0 +1,65 @@
+name: Weekly Review Intelligence Pulse
+
+on:
+  schedule:
+    # Runs at 09:00 UTC every Monday (14:30 IST)
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run pipeline in dry-run mode (skip Google Docs & Gmail publishing)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+jobs:
+  run-pulse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Review Intelligence Pipeline
+        env:
+          LLM_PROVIDER: ${{ secrets.LLM_PROVIDER || 'gemini' }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MCP_SERVER_URL: ${{ secrets.MCP_SERVER_URL }}
+          MCP_API_KEY: ${{ secrets.MCP_API_KEY }}
+          PULSE_DOC_ID: ${{ secrets.PULSE_DOC_ID }}
+          PULSE_EMAIL_RECIPIENT: ${{ secrets.PULSE_EMAIL_RECIPIENT }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            python -m src --dry-run
+          else
+            python -m src --weeks 10
+          fi
+
+      - name: Commit & Push Updated Pulse Dashboard Data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Designs/groww-pulse/data/pulse.json Designs/groww-pulse/data/pulse.js public/data/pulse.json public/data/pulse.js
+          if git diff --staged --quiet; then
+            echo "No changes in pulse data to commit."
+          else
+            git commit -m "chore(pulse): automated weekly pulse update [skip ci]"
+            git push
+          fi

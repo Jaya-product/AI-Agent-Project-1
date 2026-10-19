@@ -1,0 +1,41 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Groww Review Intelligence Agent — Runtime Configuration
+# All values here can be overridden by environment variables (see .env.example)
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Review Ingestion ──────────────────────────────────────────────────────────
+review_window_weeks: 10       # How many weeks of reviews to ingest
+max_reviews: 500              # Max reviews to fetch per pipeline run
+min_review_length: 20         # Reviews shorter than this (chars) are dropped
+app_id: "com.nextbillion.groww"
+lang: "en"
+country: "in"
+
+# ── Preprocessing & PII Scrubbing ─────────────────────────────────────────────
+# Policy for non-ASCII (Hindi, Tamil, Punjabi, Malayalam, etc.) reviews.
+# Real data: 19.2% of Groww reviews are non-ASCII. Losing them means losing
+# substantive complaints written in regional languages.
+#   "keep" (recommended) — pass to LLM; Gemini handles multilingual text natively
+#   "drop"               — discard non-ASCII reviews for simpler English-only pipeline
+non_english_policy: "keep"
+
+# ── Theme Clustering ──────────────────────────────────────────────────────────
+max_themes: 5                 # Hard cap on number of themes the LLM may return
+llm_batch_size: 50            # Reviews per LLM clustering batch
+llm_max_retries: 3            # Max retries if LLM returns malformed output
+
+# ── Pulse Generation ──────────────────────────────────────────────────────────
+pulse_themes: 3               # Top N themes to feature in the weekly pulse
+pulse_max_words: 250          # Hard word cap for the pulse body
+quotes_per_pulse: 3           # Number of verbatim user quotes in pulse
+action_ideas_count: 3         # Number of action ideas to generate
+
+# ── Logging ───────────────────────────────────────────────────────────────────
+log_level: "INFO"             # DEBUG | INFO | WARNING | ERROR
+
+# ── MCP Server (Google Workspace MCP) ─────────────────────────────────────────
+mcp_server_url: "https://mcp-server-production-3be3.up.railway.app"
+mcp_api_key: ""               # Optional Bearer token if configured on MCP server
+pulse_doc_id: ""              # Target Google Doc ID or URL to append pulses to
+pulse_email_recipient: ""     # Email address to send weekly pulse email to
+

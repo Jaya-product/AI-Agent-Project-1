@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groww Weekly Review Pulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+<div class="gx" id="pulse">
+  <header class="gx-hero" id="overview">
+    <p class="gx-eyebrow">Groww · Play Store review pulse · Week of Oct 19, 2026</p>
+    <h1 class="gx-title">Groww weekly review pulse</h1>
+    <p class="gx-take is-loading" id="takeaway"></p>
+    <div class="gx-kpis" id="headline">
+      <div class="gx-kpi" data-accent="0"><div class="gx-kpi-label">Reviews in top 3 themes</div><div class="gx-kpi-val is-loading" data-num="int" data-source="summary" data-field="total" data-row="0">—</div><div class="gx-kpi-note">This week</div></div>
+      <div class="gx-kpi" data-accent="1"><div class="gx-kpi-label">Lead of #1 over #2</div><div class="gx-kpi-val is-loading" data-num="int" data-source="summary" data-field="lead_margin" data-row="0">—</div><div class="gx-kpi-note">Reviews</div></div>
+      <div class="gx-kpi" data-accent="2"><div class="gx-kpi-label">Leading theme's share</div><div class="gx-kpi-val is-loading" data-num="pct" data-source="summary" data-field="top_share" data-row="0">—</div><div class="gx-kpi-note">Of top-3 theme reviews</div></div>
+      <div class="gx-kpi" data-accent="3"><div class="gx-kpi-label">Negative featured quotes</div><div class="gx-kpi-val is-loading" data-num="pct" data-source="sentiment" data-field="share" data-where="sentiment=Negative">—</div><div class="gx-kpi-note">Share of quotes in the report</div></div>
+    </div>
+  </header>
+
+  <div class="gx-active" id="active" hidden>
+    <span class="gx-active-label">Filtering by</span>
+    <span id="active-pills" style="display:contents"></span>
+    <button type="button" class="gx-link" id="clear-all">Clear all</button>
+  </div>
+
+  <section class="gx-grid">
+    <div class="gx-card" id="theme-mix">
+      <h2>Theme mix</h2>
+      <p class="gx-cap">Share of this week's top-3 theme reviews. Click a slice or row to filter the whole page.</p>
+      <div class="gx-donut is-loading" id="donut" data-source="shares"></div>
+      <div class="gx-legend" id="legend"></div>
+    </div>
+    <div class="gx-card" id="complaint-to-fix">
+      <h2>From complaint to fix</h2>
+      <p class="gx-cap">Which theme each recommended action addresses. Hover or click a theme to trace it.</p>
+      <div class="gx-map is-loading" id="map" data-source="themes actions">
+        <div class="gx-map-l" id="map-l"></div>
+        <svg class="gx-map-svg" id="map-svg" aria-hidden="true"></svg>
+        <ol class="gx-map-r" id="map-r"></ol>
+      </div>
+      <ul class="gx-gaps" id="gaps"></ul>
+    </div>
+  </section>
+
+  <section class="gx-card" id="voice">
+    <div class="gv-top">
+      <div class="gv-intro">
+        <h2>What users are saying</h2>
+        <p class="gx-cap">Featured reviews from this week's report.</p>
+      </div>
+      <div class="gv-status">
+        <span id="showing"></span>
+        <button type="button" class="gx-link" id="voice-reset" hidden>Reset</button>
+      </div>
+    </div>
+
+    <div class="gv-panel">
+      <p class="gv-sentence" id="sentence">
+        <span class="gv-word">Show</span>
+        <span class="gv-slot" data-menu="sent">
+          <button type="button" class="gv-pill" aria-haspopup="true" aria-expanded="false"><span class="gv-pill-label">all</span><span class="gv-caret" aria-hidden="true">▾</span></button>
+          <span class="gv-pop" role="menu" hidden>
+            <span class="gv-pop-h">Sentiment</span>
+            <span class="gv-opts" id="opts-sent"></span>
+          </span>
+        </span>
+        <span class="gv-word">quotes about</span>
+        <span class="gv-slot" data-menu="theme">
+          <button type="button" class="gv-pill" aria-haspopup="true" aria-expanded="false"><span class="gv-dot-slot"></span><span class="gv-pill-label">any theme</span><span class="gv-caret" aria-hidden="true">▾</span></button>
+          <span class="gv-pop" role="menu" hidden>
+            <span class="gv-pop-h">Theme</span>
+            <span class="gv-opts" id="opts-theme"></span>
+          </span>
+        </span>
+        <span class="gv-word">mentioning</span>
+        <span class="gv-slot" data-menu="term">
+          <button type="button" class="gv-pill" aria-haspopup="true" aria-expanded="false"><span class="gv-pill-label">anything</span><span class="gv-caret" aria-hidden="true">▾</span></button>
+          <span class="gv-pop gv-pop-wide" hidden>
+            <input class="gv-search" id="q" type="search" placeholder="Type a word or phrase…" aria-label="Search quotes" autocomplete="off">
+            <span class="gv-pop-h">Or pick a keyword</span>
+            <span class="gv-kws" id="opts-kw"></span>
+          </span>
+        </span>
+      </p>
+      <div class="gv-mood" id="mood" data-source="sentiment" aria-label="Sentiment split. Click a side to filter."></div>
+    </div>
+
+    <div class="gx-quotes is-loading" id="quotes"></div>
+  </section>
+</div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script src="data/pulse.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
